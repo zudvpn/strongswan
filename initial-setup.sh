@@ -36,7 +36,6 @@ conn %default
     right=%any
     rightauth=eap-mschapv2
     rightsourceip=${VPN_NETWORK_IPV4},${VPN_NETWORK_IPV6}
-    rightsubnet=${DUMMY_DEVICE}
     rightdns=${VPN_DNS}
     eap_identity=%identity
 
