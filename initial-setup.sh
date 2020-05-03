@@ -44,6 +44,6 @@ conn ikev2-pubkey
 _EOF_
 
 cat > /etc/ipsec.d/ipsec.secrets <<_EOF_
-: RSA "privkey.pem"
+: ECDSA "privkey.pem"
 vpn : EAP "${VPN_PASSWORD}"
 _EOF_
