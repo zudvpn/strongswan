@@ -18,5 +18,10 @@ jobs:
       uses: matootie/github-docker@v2.2.3
       with:
         accessToken: ${{ secrets.GITHUB_TOKEN }}
-    - name: Docker Image Output
-      run: echo ${{ steps.run-action.outputs.imageURL }}
+    - name: Push to Docker Hub
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: zudvpn/strongswan
+        tag_with_ref: true
