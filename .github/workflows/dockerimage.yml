@@ -14,6 +14,10 @@ jobs:
     steps:
     - name: GitHub Docker Action
       uses: matootie/github-docker@v2.2.3
+      if: github.repository == 'zudvpn/strongswan'
+    - name: Create Docker Image
+      uses: ./
       with:
         accessToken: ${{ secrets.GITHUB_TOKEN }}
-        context: .
+    - name: Docker Image Output
+      run: echo ${{ steps.run-action.outputs.imageURL }}
